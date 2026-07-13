@@ -1,0 +1,4 @@
+runners\ModuleResolver.class
+stepdefinitions\WingItSteps.class
+runners\TestRunner.class
+runners\SuiteResolver.class

@@ -1,0 +1,27 @@
+{
+  "projectName": "WingIt Airlines",
+  "environmentURL": "about:blank",
+  "selectedSuite": "All",
+  "testSuites": {
+    "QuickStart": "@QuickStart",
+    "Authentication": "@Authentication",
+    "FlightSearch": "@FlightSearch",
+    "Booking": "@Booking",
+    "All": "@WingIt"
+  },
+  "includeTags": "",
+  "excludeTags": "",
+  "browser": "chrome",
+  "executionMode": "web",
+  "parallelExecution": false,
+  "threads": 1,
+  "testDataSource": "json",
+  "strictDataValidation": false,
+  "testDataLogLevel": "INFO",
+  "reporting": {
+    "captureScreenshotsOnPass": true,
+    "captureScreenshotsOnFailure": true
+  },
+  "rcaEnabled": true,
+  "defectWriterEnabled": true
+}

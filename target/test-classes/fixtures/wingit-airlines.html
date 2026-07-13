@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WingIt Airlines — Demo Fixture</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5f7fa; padding: 20px; }
+        .page { display: none; max-width: 600px; margin: 0 auto; background: #fff; border-radius: 8px; padding: 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .page.active { display: block; }
+        h1 { color: #1a237e; margin-bottom: 24px; font-size: 24px; }
+        h2 { color: #333; margin-bottom: 16px; }
+        label { display: block; margin-bottom: 4px; font-weight: 500; color: #555; }
+        input { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 16px; font-size: 14px; }
+        button { padding: 10px 24px; background: #1a237e; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; }
+        button:hover { background: #283593; }
+        .error { color: #d32f2f; font-size: 13px; margin-top: -12px; margin-bottom: 12px; display: none; }
+        .flight-card { border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; margin-bottom: 12px; }
+        .flight-card h3 { color: #1a237e; margin-bottom: 8px; }
+        .flight-card p { color: #666; font-size: 13px; }
+        .success { background: #e8f5e9; border: 1px solid #4caf50; border-radius: 6px; padding: 16px; color: #2e7d32; }
+        #welcome-message { display: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f5f5f5; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="login-page" class="page active">
+    <h1>✈️ WingIt Airlines</h1>
+    <h2>Sign In</h2>
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter your email">
+    <div id="email-error" class="error">Email is required</div>
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password">
+    <div id="login-error" class="error">Invalid credentials</div>
+    <button id="btn-login" onclick="handleLogin()">Sign In</button>
+</div>
+
+<!-- SEARCH PAGE -->
+<div id="search-page" class="page">
+    <h1 id="welcome-message">Welcome, Captain!</h1>
+    <h2>Search Flights</h2>
+    <label for="from-city">From</label>
+    <input type="text" id="from-city" placeholder="Departure city">
+    <label for="to-city">To</label>
+    <input type="text" id="to-city" placeholder="Destination city">
+    <button id="btn-search" onclick="handleSearch()">Search Flights</button>
+    <div id="search-results" style="margin-top: 20px;"></div>
+    <div id="search-error" class="error">No flights found</div>
+</div>
+
+<!-- BOOKING PAGE -->
+<div id="booking-page" class="page">
+    <h2>Complete Booking</h2>
+    <p id="flight-summary" style="margin-bottom: 16px; color: #555;"></p>
+    <label for="passenger-name">Passenger Name</label>
+    <input type="text" id="passenger-name" placeholder="Full name">
+    <button id="btn-confirm" onclick="handleBooking()">Confirm Booking</button>
+    <div id="confirmation-message" class="success" style="display:none; margin-top: 16px;"></div>
+</div>
+
+<script>
+const flights = {
+    'New York (JFK)|London (LHR)': [
+        { number: 'WI-101', time: '08:00', duration: '7h 30m', price: '$450' },
+        { number: 'WI-102', time: '14:30', duration: '7h 45m', price: '$520' },
+        { number: 'WI-103', time: '22:00', duration: '7h 15m', price: '$380' }
+    ],
+    'Tokyo (NRT)|Sydney (SYD)': [
+        { number: 'WI-205', time: '10:00', duration: '9h 45m', price: '$680' },
+        { number: 'WI-206', time: '23:30', duration: '9h 30m', price: '$590' }
+    ],
+    'Paris (CDG)|Dubai (DXB)': [
+        { number: 'WI-310', time: '06:00', duration: '6h 30m', price: '$420' },
+        { number: 'WI-311', time: '11:00', duration: '6h 45m', price: '$480' },
+        { number: 'WI-312', time: '17:30', duration: '6h 20m', price: '$510' },
+        { number: 'WI-313', time: '23:00', duration: '6h 35m', price: '$390' }
+    ]
+};
+
+let selectedFlight = null;
+
+function handleLogin() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    document.getElementById('email-error').style.display = 'none';
+    document.getElementById('login-error').style.display = 'none';
+
+    if (!email) {
+        document.getElementById('email-error').style.display = 'block';
+        return;
+    }
+    if (email !== 'pilot@wingit.demo' || password !== 'FlyHigh2024!') {
+        document.getElementById('login-error').style.display = 'block';
+        return;
+    }
+    document.getElementById('login-page').classList.remove('active');
+    document.getElementById('search-page').classList.add('active');
+    document.getElementById('welcome-message').style.display = 'block';
+}
+
+function handleSearch() {
+    const from = document.getElementById('from-city').value;
+    const to = document.getElementById('to-city').value;
+    const key = from + '|' + to;
+    const results = flights[key];
+    document.getElementById('search-error').style.display = 'none';
+    document.getElementById('search-results').innerHTML = '';
+
+    if (!results) {
+        document.getElementById('search-error').style.display = 'block';
+        return;
+    }
+
+    let html = '<table id="flightsTable"><thead><tr><th>Flight</th><th>Departure</th><th>Duration</th><th>Price</th><th>Action</th></tr></thead><tbody>';
+    results.forEach(f => {
+        html += `<tr><td>${f.number}</td><td>${f.time}</td><td>${f.duration}</td><td>${f.price}</td><td><button onclick="selectFlight('${f.number}','${from}','${to}')">Book</button></td></tr>`;
+    });
+    html += '</tbody></table>';
+    document.getElementById('search-results').innerHTML = html;
+}
+
+function selectFlight(number, from, to) {
+    selectedFlight = { number, from, to };
+    document.getElementById('search-page').classList.remove('active');
+    document.getElementById('booking-page').classList.add('active');
+    document.getElementById('flight-summary').textContent = `Flight ${number}: ${from} → ${to}`;
+}
+
+function handleBooking() {
+    const name = document.getElementById('passenger-name').value;
+    const msg = document.getElementById('confirmation-message');
+    msg.style.display = 'block';
+    msg.textContent = `Booking confirmed! ${name} on flight ${selectedFlight.number} (${selectedFlight.from} → ${selectedFlight.to})`;
+}
+</script>
+</body>
+</html>

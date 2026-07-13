@@ -1,0 +1,59 @@
+{
+  "_module": "WingIt",
+  "TC_WINGIT_AUTH_001": {
+    "Email": "pilot@wingit.demo",
+    "Password": "FlyHigh2024!",
+    "WelcomeMessage": "Welcome, Captain!"
+  },
+  "TC_WINGIT_AUTH_002": {
+    "Email": "invalid@wingit.demo",
+    "Password": "wrong",
+    "ErrorMessage": "Invalid credentials"
+  },
+  "TC_WINGIT_AUTH_003": {
+    "Email": "",
+    "Password": "",
+    "ErrorMessage": "Email is required"
+  },
+  "TC_WINGIT_SEARCH_001": {
+    "From": "New York (JFK)",
+    "To": "London (LHR)",
+    "FlightCount": "3"
+  },
+  "TC_WINGIT_SEARCH_002": {
+    "From": "Tokyo (NRT)",
+    "To": "Sydney (SYD)",
+    "FlightCount": "2"
+  },
+  "TC_WINGIT_SEARCH_003": {
+    "From": "Paris (CDG)",
+    "To": "Dubai (DXB)",
+    "FlightCount": "4"
+  },
+  "TC_WINGIT_SEARCH_004": {
+    "From": "Unknown City",
+    "To": "Nowhere",
+    "ErrorMessage": "No flights found"
+  },
+  "TC_WINGIT_BOOK_001": {
+    "From": "New York (JFK)",
+    "To": "London (LHR)",
+    "PassengerName": "Jane Doe",
+    "FlightNumber": "WI-101",
+    "ConfirmationMessage": "Booking confirmed"
+  },
+  "TC_WINGIT_BOOK_002": {
+    "From": "Tokyo (NRT)",
+    "To": "Sydney (SYD)",
+    "PassengerName": "John Smith",
+    "FlightNumber": "WI-205",
+    "ConfirmationMessage": "Booking confirmed"
+  },
+  "TC_WINGIT_BOOK_003": {
+    "From": "Paris (CDG)",
+    "To": "Dubai (DXB)",
+    "PassengerName": "Alice Chen",
+    "FlightNumber": "WI-310",
+    "ConfirmationMessage": "Booking confirmed"
+  }
+}
