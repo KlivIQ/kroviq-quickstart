@@ -21,6 +21,37 @@ A self-contained demo project using the **WingIt Airlines** fictional booking pl
 
 ---
 
+## Kroviq Ecosystem
+
+Kroviq is a modular enterprise test automation platform.
+
+| Repository | Purpose |
+|------------|---------|
+| **kroviq-core** | Open source automation framework powering the Kroviq platform |
+| **kroviq-quickstart** | Ready-to-run WingIt Airlines sample project for getting started in minutes |
+| **kroviq-testsuite-template** | Production-ready enterprise test suite template |
+| **kroviq-studio** | Low-code visual automation platform *(Commercial)* |
+| **kroviq-enterprise** | Enterprise collaboration, governance and integrations *(Commercial)* |
+| **kroviq-ai-workspace** | AI-powered automation and engineering workspace *(Commercial)* |
+
+---
+
+> **Looking for the framework?**
+>
+> This sample project is built on **Kroviq Core**.
+>
+> 👉 https://github.com/KlivIQ/kroviq-core
+
+---
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
+
+Copyright © 2026 KlivIQ Technologies.
+
+---
+
 ## Prerequisites
 
 | Requirement | How to Check |
