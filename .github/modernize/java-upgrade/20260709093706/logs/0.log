@@ -1,0 +1,163 @@
+2026-07-09T09:37:06.827Z [INFO] ----------------------invoke appmod-list-jdks----------------------
+2026-07-09T09:37:06.827Z [INFO] [Tool.invoke]({name: appmod-list-jdks, modelId: auto, input: {
+  "additionalSearchPaths": [
+    "C:\\Program Files\\Java",
+    "C:\\Program Files (x86)\\Java",
+    "C:\\Users\\s3672\\AppData\\Local\\Programs\\AdoptOpenJDK",
+    "D:\\Java",
+    "C:\\Java"
+  ],
+  "projectPath": "d:\\Kroviq_Framework\\Kroviq_Core"
+}}).
+2026-07-09T09:37:06.828Z [INFO] [Tool.invoke] do invoke.
+2026-07-09T09:37:06.846Z [INFO] [Tool.invoke]({result: {
+  "message": "We found following jdks in your system:\n\n1. Java 1.8.0_302\n   📁 Path: C:\\Program Files\\Eclipse Foundation\\jdk-8.0.302.8-hotspot\\bin\n   🏷️ Source: PATH\n\n2. Java 17.0.12\n   📁 Path: C:\\Program Files\\Java\\jdk-17\\bin\n   🏷️ Source: others\n\nTotal: 2 JDK installation(s) found"
+}}).
+2026-07-09T09:37:06.848Z [INFO] ----------------------invoked appmod-list-jdks----------------------
+2026-07-09T09:37:06.886Z [INFO] ----------------------invoke appmod-list-mavens----------------------
+2026-07-09T09:37:06.887Z [INFO] [Tool.invoke]({name: appmod-list-mavens, modelId: auto, input: {
+  "includeVersion": true,
+  "projectPath": "d:\\Kroviq_Framework\\Kroviq_Core"
+}}).
+2026-07-09T09:37:06.887Z [INFO] [Tool.invoke] do invoke.
+2026-07-09T09:37:10.272Z [INFO] [Tool.invoke]({result: {
+  "message": "We found following maven installations in your system:\n\n1. Maven 3.9.11\n   📁 Path: C:\\Program Files\\Maven\\apache-maven-3.9.11\\bin\n   🏷️ Source: M2_HOME,PATH\n\nTotal: 1 Maven installation(s) found"
+}}).
+2026-07-09T09:37:10.273Z [INFO] ----------------------invoked appmod-list-mavens----------------------
+2026-07-09T09:37:13.975Z [INFO] ---------------------prepare appmod-report-event----------------------
+2026-07-09T09:37:13.976Z [INFO] [Tool.prepareInvocation]({name: appmod-report-event, input: {
+  "projectPath": "d:\\Kroviq_Framework\\Kroviq_Core",
+  "event": "precheckCompleted",
+  "phase": "precheck",
+  "status": "succeeded",
+  "details": {
+    "components": [
+      {
+        "name": "jdk",
+        "baseVersion": "17",
+        "targetVersion": "21"
+      }
+    ]
+  }
+}}).
+2026-07-09T09:37:13.976Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-07-09T09:37:13.976Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "Report upgrade event"
+}}).
+2026-07-09T09:37:13.977Z [INFO] ----------------------prepared appmod-report-event----------------------
+2026-07-09T09:37:14.005Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-07-09T09:37:14.005Z [INFO] [Tool.invoke]({name: appmod-report-event, modelId: auto, input: {
+  "projectPath": "d:\\Kroviq_Framework\\Kroviq_Core",
+  "event": "precheckCompleted",
+  "phase": "precheck",
+  "status": "succeeded",
+  "details": {
+    "components": [
+      {
+        "name": "jdk",
+        "baseVersion": "17",
+        "targetVersion": "21"
+      }
+    ]
+  }
+}}).
+2026-07-09T09:37:14.006Z [INFO] [Tool.invoke] do invoke.
+2026-07-09T09:37:14.010Z [INFO] Project d:\Kroviq_Framework\Kroviq_Core is a maven project, try to get java version from pom.xml
+2026-07-09T09:37:14.012Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'precheckCompleted' reported!\nSession ID: 20260709093706,\nSession Dir: d:\\Kroviq_Framework\\Kroviq_Core\\.github\\modernize\\java-upgrade\\20260709093706"
+}}).
+2026-07-09T09:37:14.012Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-07-09T09:37:14.018Z [INFO] Project java version: 17
+2026-07-09T09:37:14.019Z [INFO] Maven project detected.
+2026-07-09T09:37:14.019Z [INFO] Build tool type: mvn
+2026-07-09T09:37:14.087Z [INFO] JDK: {
+  "name": "java",
+  "path": "C:\\Program Files\\Java\\jdk-17\\bin",
+  "version": "17"
+}
+2026-07-09T09:37:14.092Z [INFO] Build tool: {
+  "name": "mvn",
+  "path": "C:\\Program Files\\Maven\\apache-maven-3.9.11\\bin",
+  "version": "",
+  "source": "M2_HOME,PATH"
+}
+2026-07-09T09:37:14.092Z [INFO] Project config: {
+  "buildTool": {
+    "path": "C:\\Program Files\\Maven\\apache-maven-3.9.11\\bin",
+    "name": "mvn",
+    "version": "",
+    "source": "M2_HOME,PATH"
+  },
+  "jdk": {
+    "path": "C:\\Program Files\\Java\\jdk-17\\bin",
+    "name": "java",
+    "version": "17"
+  },
+  "name": "Kroviq_Core",
+  "dir": "d:\\Kroviq_Framework\\Kroviq_Core"
+}
+2026-07-09T09:37:17.699Z [INFO] ---------------------prepare appmod-report-event----------------------
+2026-07-09T09:37:17.700Z [INFO] [Tool.prepareInvocation]({name: appmod-report-event, input: {
+  "sessionId": "20260709093706",
+  "projectPath": "d:\\Kroviq_Framework\\Kroviq_Core",
+  "event": "planGenerationStarted",
+  "phase": "plan",
+  "status": "succeeded"
+}}).
+2026-07-09T09:37:17.700Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-07-09T09:37:17.702Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "Report upgrade event"
+}}).
+2026-07-09T09:37:17.702Z [INFO] ----------------------prepared appmod-report-event----------------------
+2026-07-09T09:37:17.737Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-07-09T09:37:17.737Z [INFO] [Tool.invoke]({name: appmod-report-event, modelId: auto, input: {
+  "sessionId": "20260709093706",
+  "projectPath": "d:\\Kroviq_Framework\\Kroviq_Core",
+  "event": "planGenerationStarted",
+  "phase": "plan",
+  "status": "succeeded"
+}}).
+2026-07-09T09:37:17.737Z [INFO] [Tool.invoke] do invoke.
+2026-07-09T09:37:17.738Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'planGenerationStarted' reported!\nSession ID: 20260709093706,\nSession Dir: d:\\Kroviq_Framework\\Kroviq_Core\\.github\\modernize\\java-upgrade\\20260709093706"
+}}).
+2026-07-09T09:37:17.738Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-07-09T09:38:17.448Z [INFO] ---------------------prepare appmod-report-event----------------------
+2026-07-09T09:38:17.449Z [INFO] [Tool.prepareInvocation]({name: appmod-report-event, input: {
+  "sessionId": "20260709093706",
+  "projectPath": "d:\\Kroviq_Framework\\Kroviq_Core",
+  "event": "planReviewed",
+  "phase": "plan",
+  "status": "succeeded"
+}}).
+2026-07-09T09:38:17.449Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-07-09T09:38:17.449Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "Report upgrade event"
+}}).
+2026-07-09T09:38:17.450Z [INFO] ----------------------prepared appmod-report-event----------------------
+2026-07-09T09:38:17.473Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-07-09T09:38:17.474Z [INFO] [Tool.invoke]({name: appmod-report-event, modelId: auto, input: {
+  "sessionId": "20260709093706",
+  "projectPath": "d:\\Kroviq_Framework\\Kroviq_Core",
+  "event": "planReviewed",
+  "phase": "plan",
+  "status": "succeeded"
+}}).
+2026-07-09T09:38:17.474Z [INFO] [Tool.invoke] do invoke.
+2026-07-09T09:38:17.476Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'planReviewed' reported!\nSession ID: 20260709093706,\nSession Dir: d:\\Kroviq_Framework\\Kroviq_Core\\.github\\modernize\\java-upgrade\\20260709093706"
+}}).
+2026-07-09T09:38:17.476Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-07-09T09:38:22.066Z [INFO] ---------------------prepare appmod-confirm-upgrade-plan----------------------
+2026-07-09T09:38:22.066Z [INFO] [Tool.prepareInvocation]({name: appmod-confirm-upgrade-plan, input: {
+  "sessionId": "20260709093706"
+}}).
+2026-07-09T09:38:22.066Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-07-09T09:38:22.067Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "Review [upgrade plan](file:///d:/Kroviq_Framework/Kroviq_Core/.github/modernize/java-upgrade/20260709093706/plan.md)",
+  "confirmationMessages": {
+    "title": "Plan generated",
+    "message": "Please review the generated plan and make any necessary adjustments before proceeding. You can modify the generated [`plan.md`](file:///d:/Kroviq_Framework/Kroviq_Core/.github/modernize/java-upgrade/20260709093706/plan.md) directly."
+  }
+}}).
+2026-07-09T09:38:22.067Z [INFO] ----------------------prepared appmod-confirm-upgrade-plan----------------------
